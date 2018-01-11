@@ -174,7 +174,7 @@ DriveControllerMother::DriveControllerMother(int fl, int fr, int rl, int rr,
 	K = k;
 
 	canTalonFrontRight = new TalonSRX(FR);
-	canTalonFrontRight->ConfigSelectedFeedbackSensor(MotorControl::FeedbackDevice::QuadEncoder, 0, 0);
+	canTalonFrontRight->ConfigSelectedFeedbackSensor(QuadEncoder, 0, 0);
 
 	canTalonFrontLeft = new CANTalon(FL);
 	canTalonRearRight = new CANTalon(RR);
@@ -364,8 +364,6 @@ void DriveControllerMother::AutonDrive() { //auton targets, actually just pd
 	}
 
 
-
-	double velocity = canTalonFrontRight->GetSelectedSensorPosition(0);
 
 	double r_current = -((double) canTalonFrontRight->GetEncVel()
 			/ (double) CONVERSION_DIVISION) * CONVERSION_MULTIPLICATION;
