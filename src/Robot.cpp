@@ -3,6 +3,7 @@
 #include <string>
 #include <WPILib.h>
 #include <CANTalon.h>
+#include<vector>
 
 #include <IterativeRobot.h>
 #include <LiveWindow/LiveWindow.h>
@@ -11,7 +12,8 @@
 
 class Robot: public frc::IterativeRobot {
 public:
-	CANTalon cantalon;
+
+	double A[2][2] = {{0 , 1}, {0 , 1}};
 
 	void RobotInit() {
 
